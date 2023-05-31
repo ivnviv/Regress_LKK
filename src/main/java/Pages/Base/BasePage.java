@@ -33,23 +33,7 @@ public class BasePage {
     public void navigateTo(SelenideElement navigationPart){
 
         this.navigationPart.click();
-        
-        
-       //Пока отказываюсь, т.к может создать проблемы, когда разделы добавятся 
-               /* switch (navigationPart) {
-            case "Main" -> navigationMain.click();
-            case "Clinic" -> navigationClinic.click();
-            case "Doctors" -> navigationDoctors.click();
-            case "Prices" -> navigationPrices.click();
-            case "Promotions" -> navigationPromotions.click();
-            case "Responses" -> navigationResponses.click();
-            case "Cpa" -> navigationCpa.click();
-            case "Receptions" -> navigationReceptions.click();
-            case "Statistics" -> navigationStatistics.click();
-            case "Docs" -> navigationDocs.click();
-            case "Settings" -> navigationSettings.click();
-        }*/
-        
+
     }
 
     public BasePage() {
