@@ -18,6 +18,7 @@ public class BaseTest {
         Configuration.headless = false;
         Configuration.holdBrowserOpen = true;
     }
+
     @Before
     public void init() {
         setUp();

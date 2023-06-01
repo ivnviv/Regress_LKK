@@ -1,12 +1,14 @@
 package Navigation.Clinic;
 
 import base.BaseTest;
+import com.codeborne.selenide.SelenideElement;
 import org.junit.Test;
+
+import static com.codeborne.selenide.Selenide.$x;
 
 public class AddClinicTest extends BaseTest {
 
-    private final static String LkkLogin = "i.ivanov.napopravku@gmail.com";
-    private final static String LkkPassword = "Xkxzqu2FGi5Hrmt";
+    private final SelenideElement navigationClinic = $x("//input[@type='text']");
     private final static String BASE_URL = "http://profile.ivanov.polygon.dev-napopravku.ru";
     private final static String clinicNameInput = "Тестовая";
     private final static String clinicTypeInput = "Тестовый";
@@ -19,5 +21,6 @@ public class AddClinicTest extends BaseTest {
 
     @Test
     public void ClinicNameInput(){
+        basePage.navigateTo(navigationClinic);
     }
 }
