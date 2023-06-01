@@ -5,6 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.open;
 
 public class AddClinicTest extends BaseTest {
 
@@ -21,6 +22,7 @@ public class AddClinicTest extends BaseTest {
 
     @Test
     public void ClinicNameInput(){
-        basePage.navigateTo(navigationClinic);
+        basePage.open(BASE_URL);
+        navigationClinic.click();
     }
 }

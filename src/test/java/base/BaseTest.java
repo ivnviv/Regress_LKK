@@ -1,6 +1,7 @@
 package base;
 
 import Pages.Base.BasePage;
+import Pages.Navigation.LoginPage;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -8,7 +9,9 @@ import org.junit.After;
 import org.junit.Before;
 
 public class BaseTest {
+    protected LoginPage loginPage = new LoginPage();
     protected BasePage basePage = new BasePage();
+
 
     public void setUp() {
         WebDriverManager.chromedriver().setup();
@@ -22,7 +25,7 @@ public class BaseTest {
     @Before
     public void init() {
         setUp();
-        basePage.auth();
+        loginPage.auth();
     }
 
     @After
