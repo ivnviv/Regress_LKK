@@ -6,7 +6,7 @@ import com.codeborne.selenide.SelenideElement;
 
 import java.time.Duration;
 
-import static Common.Config.BASE_URL;
+import static Common.Config.*;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class BasePage {
@@ -31,9 +31,11 @@ public class BasePage {
         submitLogIn.click();
     }
     public void navigateTo(SelenideElement navigationPart){
-
         this.navigationPart.click();
-
+    }
+    public void auth(){
+        loginInput.setValue(LOGIN);
+        passwordInput.setValue(PASSWORD);
     }
 
     public BasePage() {

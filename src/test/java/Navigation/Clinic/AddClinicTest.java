@@ -1,12 +1,13 @@
 package Navigation.Clinic;
 
+import base.BaseTest;
 import org.junit.Test;
 
-public class AddClinicTest {
+public class AddClinicTest extends BaseTest {
 
     private final static String LkkLogin = "i.ivanov.napopravku@gmail.com";
     private final static String LkkPassword = "Xkxzqu2FGi5Hrmt";
-    private final static String BASE_URL = "http://profile.ivanov.polygon.dev-napopravku.ru/clinic";
+    private final static String BASE_URL = "http://profile.ivanov.polygon.dev-napopravku.ru";
     private final static String clinicNameInput = "Тестовая";
     private final static String clinicTypeInput = "Тестовый";
     private final static String cityInput = "Москва";
@@ -16,14 +17,7 @@ public class AddClinicTest {
     private final static String numberCommentInput = "пояснялово2";
     private final static String siteInput = "facebook.com";
 
-
     @Test
     public void ClinicNameInput(){
-        MainPage mainPage = new MainPage(BASE_URL);
-        mainPage.auth(LkkLogin,LkkPassword);
-        mainPage.clickOnAddClinic();
-
-        AddClinicModalWindow addClinicModalWindow = new AddClinicModalWindow();
-        addClinicModalWindow.fillAddClinicWindow(clinicNameInput, clinicTypeInput,cityInput,addressInput,addressCommentInput,telNumberInput, numberCommentInput);
     }
 }
