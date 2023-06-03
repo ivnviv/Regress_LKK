@@ -2,8 +2,8 @@ package Pages.Navigation;
 
 import com.codeborne.selenide.SelenideElement;
 
-import static Common.Config.LOGIN;
-import static Common.Config.PASSWORD;
+import static Common.Constants.LOGIN;
+import static Common.Constants.PASSWORD;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class LoginPage {
