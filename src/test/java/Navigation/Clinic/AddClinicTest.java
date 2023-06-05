@@ -1,8 +1,10 @@
 package Navigation.Clinic;
 
 import base.BaseTest;
+import org.junit.Assert;
 import org.junit.Test;
 
+import static Common.Constants.CLINIC_NAME;
 import static com.codeborne.selenide.Selenide.open;
 
 public class AddClinicTest extends BaseTest {
@@ -21,9 +23,6 @@ public class AddClinicTest extends BaseTest {
     @Test
     public void AddClinic(){
 
-        /**Перенес в setup BaseTest. Пока посмотрю, как работает в такой вариации*/
-        // basePage.open(BASE_URL);
-       // loginPage.auth();
         /**Переходим в раздел "Клиника", нажимаем "Добавить клинику"*/
         clinicContacts
                 .navigateToClinic()
@@ -37,6 +36,20 @@ public class AddClinicTest extends BaseTest {
                 .enterClinicAddress()
                 .enterClinicTelNumber()
                 .enterClinicTelComment()
-                .enterClinicSite();
+                .enterClinicSite()
+
+                /**Сохраняем клинику*/
+                .saveClinic();
+    }
+
+        @Test
+        public void CheckAddedClinic() {
+            clinicContacts
+                    .navigateToClinic();
+
+            String ClinicName = clinicContacts.getClinicName();
+            Assert.assertTrue(ClinicName.contains(CLINIC_NAME));
+            Assert.assertTrue(ClinicName.contains("(ожидает модерации)"));
+
     }
 }

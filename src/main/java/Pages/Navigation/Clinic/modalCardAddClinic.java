@@ -16,7 +16,7 @@ public class modalCardAddClinic extends BasePage {
     private final SelenideElement telNumberInput = $x("//input[@type = 'tel']");
     private final SelenideElement telNumberCommentInput = $x("/html/body/div[1]/div/div[3]/div/div/div/form/div[2]/div[2]/div[3]/div/div/div/div/input");
     private final SelenideElement addExtraTelNumber = $x("/html/body/div[1]/div/div[3]/div/div/div/form/div[2]/div[2]/button/span/i");
-    private final SelenideElement siteInput = $x("");
+    private final SelenideElement siteInput = $x("/html/body/div[1]/div/div[3]/div/div/div/form/div[2]/div[2]/div[4]/div/div/div/div/input");
     private final SelenideElement addWorkRegime = $x("/html/body/div[1]/div/div[3]/div/div/div/form/div[2]/div[3]/button[1]/span/i");
     //добавить константы для режима работы
     private final SelenideElement saveButton = $x("//button[@type= 'submit']");
@@ -27,6 +27,7 @@ public class modalCardAddClinic extends BasePage {
         clinicNameInput.setValue(CLINIC_NAME);
         return this;
     }
+
     public modalCardAddClinic enterClinicType() {
         clinicTypeInput.setValue(CLINIC_TYPE);
         return this;
