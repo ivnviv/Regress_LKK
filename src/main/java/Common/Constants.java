@@ -19,4 +19,7 @@ public class Constants {
     public final static String COMMENT_FOR_TELL_NUMBER = "пояснялово2";
     public final static String SITE_NAME = "facebook.com";
 
+    /** Плашка "Ожидает морерации"*/
+    public final static String WAITING_FOR_MODERATION = "(ожидает модерации)";
+
 }

@@ -4,21 +4,10 @@ import base.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static Common.Constants.CLINIC_NAME;
+import static Common.Constants.*;
 import static com.codeborne.selenide.Selenide.open;
 
 public class AddClinicTest extends BaseTest {
-
-
-    private final static String BASE_URL = "http://profile.ivanov.polygon.dev-napopravku.ru";
-    private final static String clinicNameInput = "Тестовая";
-    private final static String clinicTypeInput = "Тестовый";
-    private final static String cityInput = "Москва";
-    private final static String addressInput = "Пушкина-колотушкина";
-    private final static String addressCommentInput = "пояснялово";
-    private final static String telNumberInput = "1111111111";
-    private final static String numberCommentInput = "пояснялово2";
-    private final static String siteInput = "facebook.com";
 
     @Test
     public void AddClinic(){
@@ -47,9 +36,19 @@ public class AddClinicTest extends BaseTest {
             clinicContacts
                     .navigateToClinic();
 
-            String ClinicName = clinicContacts.getClinicName();
-            Assert.assertTrue(ClinicName.contains(CLINIC_NAME));
-            Assert.assertTrue(ClinicName.contains("(ожидает модерации)"));
+            /**Проверяем параметры созданной клиники*/
+            String ClinicName = clinicContacts.getClinicName();              //Записываем название в переменную (название также содержит тип и плашку ожидания модерации
+            String ClinicTel = clinicContacts.getClinicTel();
+            String ClinicAddress = clinicContacts.getClinicAddress();
+
+
+
+            Assert.assertTrue(ClinicName.contains(CLINIC_NAME));             //Проверка названия
+            Assert.assertTrue(ClinicName.contains(CLINIC_TYPE));             //Проверка типа
+            Assert.assertTrue(ClinicName.contains(WAITING_FOR_MODERATION));  //Проверка плашки "Ожидает модерации"
+            Assert.assertTrue(ClinicTel.contains(TEL_NUMBER));               //Проверка номера телефона
+            Assert.assertTrue(ClinicAddress.contains(CLINIC_ADDRESS));       //Проверка адреса
+            Assert.assertTrue(ClinicAddress.contains(CLINIC_CITY));          //Проверка города
 
     }
 }

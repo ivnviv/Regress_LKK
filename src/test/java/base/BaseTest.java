@@ -37,7 +37,6 @@ public class BaseTest {
     @Before
     public void init() {
         setUp();
-
     }
 
     @After
