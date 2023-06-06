@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$x;
 public class clinicContacts extends BasePage {
 
     //Переход к разделу Клиника
-    private final SelenideElement navigationClinic = $x("/html/body/div[1]/div/div/div/div/nav/ul/li[2]/div/a");
+    private final SelenideElement navigationClinic = $x("//*[@id=\"app\"]/div/div/div/nav/ul/li[2]/div/a");
     private final SelenideElement addClinicButton = $x("//div[@class='page__title page__title--flex']/button");
 
     private final SelenideElement ClinicDetailFirst = $x("//div[@class = 'page__list page__list--full']/div[1]");
