@@ -22,11 +22,11 @@ public class clinicContacts extends BasePage {
 
 
     public clinicContacts navigateToClinic() {
-        navigationClinic.shouldBe(visible).click();
+        navigationClinic.click();
         return this;
     }
     public clinicContacts clickAddClinic() {
-        addClinicButton.shouldBe(visible).click();
+        addClinicButton.click();
         return this;
     }
     public String getClinicName() {
