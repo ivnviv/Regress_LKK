@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="AppleTest" />
+        <module name="Regress_LKK" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Regress_LKK" target="17" />
+      <module name="AppleTest" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
