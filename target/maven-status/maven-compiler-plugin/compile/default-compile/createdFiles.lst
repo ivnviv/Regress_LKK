@@ -1,0 +1,5 @@
+Pages\Navigation\LoginPage.class
+Pages\Base\BasePage.class
+Pages\Navigation\Clinic\clinicContacts.class
+Common\Constants.class
+Pages\Navigation\Clinic\modalCardAddClinic.class
