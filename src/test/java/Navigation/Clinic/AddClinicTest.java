@@ -2,7 +2,7 @@ package Navigation.Clinic;
 
 import base.BaseTest;
 import org.junit.Assert;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import static Common.Constants.*;
 import static com.codeborne.selenide.Selenide.open;
@@ -49,6 +49,14 @@ public class AddClinicTest extends BaseTest {
             Assert.assertTrue(ClinicTel.contains(TEL_NUMBER));               //Проверка номера телефона
             Assert.assertTrue(ClinicAddress.contains(CLINIC_ADDRESS));       //Проверка адреса
             Assert.assertTrue(ClinicAddress.contains(CLINIC_CITY));          //Проверка города
+
+    }
+    @Test
+    public void AddClinicFilial() {
+        clinicContacts
+                .navigateToClinic();
+
+
 
     }
 }

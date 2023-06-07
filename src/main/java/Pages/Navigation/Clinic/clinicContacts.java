@@ -8,8 +8,8 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class clinicContacts extends BasePage {
 
-    //Переход к разделу Клиника
-    private final SelenideElement navigationClinic = $x("//*[@id=\"app\"]/div/div/div/nav/ul/li[2]/div/a");
+    /**Элементы для взаимодействия*/
+    private final SelenideElement navigationClinic = $x("//*[@id=\"app\"]/div/div/div/nav/ul/li[2]/div/a"); //
     private final SelenideElement addClinicButton = $x("//div[@class='page__title page__title--flex']/button");
 
     private final SelenideElement ClinicDetailFirst = $x("//div[@class = 'page__list page__list--full']/div[1]");
@@ -21,28 +21,39 @@ public class clinicContacts extends BasePage {
     private final SelenideElement detailEdit = $x("/html/body/div[1]/div/div[1]/div/main/div/div/div[2]/div/div/div[2]/div[1]/div/div[2]/div/button/span");
 
 
+    /**Перейти к разделу Клиника*/
     public clinicContacts navigateToClinic() {
         navigationClinic.click();
         return this;
     }
+
+    /**Клик по кнопке Добавить клинику*/
     public clinicContacts clickAddClinic() {
         addClinicButton.click();
         return this;
     }
+
+    /**Получение параметров клиники после создания */
     public String getClinicName() {
         return detailFirstName.getText();
-    }
+    } // Получаем название клиники
     public String getClinicTel() {
         return detailTelNumber.getText();
-    }
+    } // Получаем телефон клиники
     public String getClinicAddress() {
         return detailAddress.getText();
-    }
+    } // Получаем адрес клиники
+
+    /**Проверка видимости кнопки Добавить филиал */
     public void addFilialIsVisible(){
         detailAddFilial.shouldBe(visible);
     }
+
+    /**Проверка видимости кнопки Редактировать клинику */
     public void clinicEditIsVisible(){
         detailEdit.shouldBe(visible);
     }
+
+
 
 }
