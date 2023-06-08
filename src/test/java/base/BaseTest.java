@@ -30,7 +30,8 @@ public class BaseTest {
        /**При setup будет также происходить переход по ссылке в ЛКК и авторизация.
         * На начальном этапе это ок, дальше требуется пересмотреть*/
 
-        basePage.open(BASE_URL);
+
+       basePage.open(BASE_URL);
         loginPage.auth();
     }
 

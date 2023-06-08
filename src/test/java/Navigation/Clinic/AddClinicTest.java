@@ -2,13 +2,15 @@ package Navigation.Clinic;
 
 import base.BaseTest;
 import org.junit.Assert;
-import org.testng.annotations.Test;
+import org.junit.Test;
+//import org.testng.annotations.Test;
 
 import static Common.Constants.*;
 import static com.codeborne.selenide.Selenide.open;
 
 public class AddClinicTest extends BaseTest {
 
+    /**Тест на добавление клиники*/
     @Test
     public void AddClinic(){
 
@@ -31,6 +33,7 @@ public class AddClinicTest extends BaseTest {
                 .saveClinic();
     }
 
+        /**Тест на проверку параметров созданной клиники*/
         @Test
         public void CheckAddedClinic() {
             clinicContacts
@@ -38,8 +41,8 @@ public class AddClinicTest extends BaseTest {
 
             /**Проверяем параметры созданной клиники*/
             String ClinicName = clinicContacts.getClinicName();              //Записываем название в переменную (название также содержит тип и плашку ожидания модерации
-            String ClinicTel = clinicContacts.getClinicTel();
-            String ClinicAddress = clinicContacts.getClinicAddress();
+            String ClinicTel = clinicContacts.getClinicTel();               //Записываем телефон в переменную
+            String ClinicAddress = clinicContacts.getClinicAddress();       //Записываем адрес клиники в переменную
 
 
 
@@ -51,9 +54,10 @@ public class AddClinicTest extends BaseTest {
             Assert.assertTrue(ClinicAddress.contains(CLINIC_CITY));          //Проверка города
 
     }
-    @Test
-    public void AddClinicFilial() {
-        clinicContacts
+        /**Тест на добавление филиала*/
+        @Test
+        public void AddClinicFilial() {
+            clinicContacts
                 .navigateToClinic();
 
 
