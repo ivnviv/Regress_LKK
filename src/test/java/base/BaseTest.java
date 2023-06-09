@@ -10,6 +10,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import static Common.Constants.BASE_URL;
 
 public class BaseTest {
@@ -18,6 +21,7 @@ public class BaseTest {
     protected clinicContacts clinicContacts = new clinicContacts();
     protected modalCardAddClinic modalCardAddClinic = new modalCardAddClinic();
 
+    private static final Logger logger = LogManager.getLogger(BaseTest.class);
 
     public void setUp() {
         WebDriverManager.chromedriver().setup();
@@ -26,6 +30,8 @@ public class BaseTest {
         Configuration.browserSize = "1920x1080";
         Configuration.headless = false;
         Configuration.holdBrowserOpen = true;
+
+        logger.info("Настройка Selenide и открытие браузера");
 
        /**При setup будет также происходить переход по ссылке в ЛКК и авторизация.
         * На начальном этапе это ок, дальше требуется пересмотреть*/
@@ -43,5 +49,6 @@ public class BaseTest {
     @After
     public void tearDown() {
         Selenide.closeWebDriver();
+        logger.info("Закрытие браузера");
     }
 }
