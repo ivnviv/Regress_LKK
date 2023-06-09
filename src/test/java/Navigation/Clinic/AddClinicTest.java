@@ -3,7 +3,6 @@ package Navigation.Clinic;
 import base.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
-import org.testng.annotations.Test;
 
 import static Common.Constants.*;
 import static com.codeborne.selenide.Selenide.open;
