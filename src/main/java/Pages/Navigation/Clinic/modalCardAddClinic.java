@@ -26,12 +26,12 @@ public class modalCardAddClinic extends BasePage {
 
 
     public modalCardAddClinic enterClinicName() {
-        clinicNameInput.setValue(CLINIC_NAME);
+        clinicNameInput.setValue(getClinicName());
         return this;
     }
 
     public modalCardAddClinic enterClinicType() {
-        clinicTypeInput.setValue(CLINIC_TYPE);
+        clinicTypeInput.setValue(getClinicType());
         return this;
     }
     public modalCardAddClinic clinicIsNetwork() {
@@ -39,23 +39,23 @@ public class modalCardAddClinic extends BasePage {
         return this;
     }
     public modalCardAddClinic enterClinicCity() {
-        cityInput.setValue(CLINIC_CITY);
+        cityInput.setValue(getClinicCity());
         return this;
     }
     public modalCardAddClinic enterClinicAddress() {
-        addressInput.setValue(CLINIC_ADDRESS);
+        addressInput.setValue(getClinicAddress());
         return this;
     }
     public modalCardAddClinic enterClinicAddressComment() {
-        addressCommentInput.setValue(COMMENT_FOR_ADDRESS);
+        addressCommentInput.setValue(getCommentForAddress());
         return this;
     }
     public modalCardAddClinic enterClinicTelNumber() {
-        telNumberInput.setValue(TEL_NUMBER);
+        telNumberInput.setValue(getTelNumber());
         return this;
     }
     public modalCardAddClinic enterClinicTelComment() {
-        telNumberCommentInput.setValue(COMMENT_FOR_TELL_NUMBER);
+        telNumberCommentInput.setValue(getCommentForAddress());
         return this;
     }
     public modalCardAddClinic addExtraTelNumber() {
@@ -63,7 +63,7 @@ public class modalCardAddClinic extends BasePage {
         return this;
     }
     public modalCardAddClinic enterClinicSite() {
-        siteInput.setValue(SITE_NAME);
+        siteInput.setValue(getSiteName());
         return this;
     }
     public modalCardAddClinic addWorkRegime() {

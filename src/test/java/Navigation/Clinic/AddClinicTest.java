@@ -1,11 +1,9 @@
 package Navigation.Clinic;
 
+import Common.Constants;
 import base.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static Common.Constants.*;
-import static com.codeborne.selenide.Selenide.open;
 
 public class AddClinicTest extends BaseTest {
 
@@ -45,12 +43,13 @@ public class AddClinicTest extends BaseTest {
 
 
 
-            Assert.assertTrue(ClinicName.contains(CLINIC_NAME));             //Проверка названия
-            Assert.assertTrue(ClinicName.contains(CLINIC_TYPE));             //Проверка типа
-            Assert.assertTrue(ClinicName.contains(WAITING_FOR_MODERATION));  //Проверка плашки "Ожидает модерации"
-            Assert.assertTrue(ClinicTel.contains(TEL_NUMBER));               //Проверка номера телефона
-            Assert.assertTrue(ClinicAddress.contains(CLINIC_ADDRESS));       //Проверка адреса
-            Assert.assertTrue(ClinicAddress.contains(CLINIC_CITY));          //Проверка города
+            Assert.assertTrue(ClinicName.contains(Constants.getClinicName()));                    // Проверка названия
+            Assert.assertTrue(ClinicName.contains(Constants.getClinicType()));                    // Проверка типа
+            Assert.assertTrue(ClinicName.contains(Constants.getWaitingForModeration()));         // Проверка плашки "Ожидает модерации"
+            Assert.assertTrue(ClinicTel.contains(Constants.getTelNumber()));                     // Проверка номера телефона
+            Assert.assertTrue(ClinicAddress.contains(Constants.getClinicAddress()));              // Проверка адреса
+            Assert.assertTrue(ClinicAddress.contains(Constants.getClinicCity()));                 // Проверка города
+
 
     }
         /**Тест на добавление филиала*/

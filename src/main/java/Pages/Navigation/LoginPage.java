@@ -1,9 +1,10 @@
 package Pages.Navigation;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
-import static Common.Constants.LOGIN;
-import static Common.Constants.PASSWORD;
+import static Common.Constants.*;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class LoginPage {
@@ -16,8 +17,12 @@ public class LoginPage {
 
     /**Метод для авторизации*/
     public void auth(){
-        loginInput.setValue(LOGIN);
-        passwordInput.setValue(PASSWORD);
-        submitLogIn.click();
+        loginInput.shouldBe(visible).setValue(getLogin());
+        passwordInput.shouldBe(visible).setValue(getPassword());
+        submitLogIn.shouldBe(visible).click();
     }
+    public void open(String url) {
+        Selenide.open(url);
+    }
+
 }

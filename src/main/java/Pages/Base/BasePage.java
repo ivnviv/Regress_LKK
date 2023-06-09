@@ -4,13 +4,14 @@ import com.codeborne.selenide.Selenide;
 
 public class BasePage {
 
-    /**Открытие URL*/
+    /**
+     * Открывает указанный URL.
+     * @param url URL для открытия.
+     */
     public void open(String url) {
         Selenide.open(url);
     }
 
-    public BasePage() {
-    }
 }
 
 

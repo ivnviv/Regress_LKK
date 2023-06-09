@@ -8,12 +8,11 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
-import org.junit.Before;
-
+import org.junit.BeforeClass;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static Common.Constants.BASE_URL;
+import static Common.Constants.getBaseUrl;
 
 public class BaseTest {
     protected LoginPage loginPage = new LoginPage();
@@ -23,7 +22,8 @@ public class BaseTest {
 
     private static final Logger logger = LogManager.getLogger(BaseTest.class);
 
-    public void setUp() {
+    @BeforeClass
+    public static void setUpClass() {
         WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
         Configuration.driverManagerEnabled = true;
@@ -31,24 +31,17 @@ public class BaseTest {
         Configuration.headless = false;
         Configuration.holdBrowserOpen = true;
 
-        logger.info("Настройка Selenide и открытие браузера");
+        logger.info("Setting up Selenide and opening the browser");
 
-       /**При setup будет также происходить переход по ссылке в ЛКК и авторизация.
-        * На начальном этапе это ок, дальше требуется пересмотреть*/
-
-
-       basePage.open(BASE_URL);
+        // Perform authentication here
+        LoginPage loginPage = new LoginPage();
+        loginPage.open(getBaseUrl());
         loginPage.auth();
-    }
-
-    @Before
-    public void init() {
-        setUp();
     }
 
     @After
     public void tearDown() {
         Selenide.closeWebDriver();
-        logger.info("Закрытие браузера");
+        logger.info("Closing the browser");
     }
 }

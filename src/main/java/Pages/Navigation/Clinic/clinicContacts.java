@@ -45,14 +45,15 @@ public class clinicContacts extends BasePage {
         return detailAddress.getText();
     } // Получаем адрес клиники
 
+
     /**Проверка видимости кнопки Добавить филиал */
-    public void addFilialIsVisible(){
-        detailAddFilial.shouldBe(visible);
+    public boolean isAddFilialVisible() {
+        return detailAddFilial.is(visible);
     }
 
     /**Проверка видимости кнопки Редактировать клинику */
-    public void clinicEditIsVisible(){
-        detailEdit.shouldBe(visible);
+    public boolean isClinicEditVisible() {
+        return detailEdit.is(visible);
     }
 
 
