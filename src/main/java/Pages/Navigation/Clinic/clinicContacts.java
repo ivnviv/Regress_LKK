@@ -1,7 +1,9 @@
 package Pages.Navigation.Clinic;
 
+import Common.Constants;
 import Pages.Base.BasePage;
 import com.codeborne.selenide.SelenideElement;
+
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;

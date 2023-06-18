@@ -15,7 +15,7 @@ import org.apache.logging.log4j.Logger;
 import static Common.Constants.getBaseUrl;
 
 public class BaseTest {
-    protected LoginPage loginPage = new LoginPage();
+    //protected LoginPage loginPage = new LoginPage();
     protected BasePage basePage = new BasePage();
     protected clinicContacts clinicContacts = new clinicContacts();
     protected modalCardAddClinic modalCardAddClinic = new modalCardAddClinic();
@@ -34,8 +34,9 @@ public class BaseTest {
         logger.info("Setting up Selenide and opening the browser");
 
         // Perform authentication here
+        BasePage basePage = new BasePage();
         LoginPage loginPage = new LoginPage();
-        loginPage.open(getBaseUrl());
+        basePage.open(getBaseUrl());
         loginPage.auth();
     }
 
@@ -43,5 +44,7 @@ public class BaseTest {
     public void tearDown() {
         Selenide.closeWebDriver();
         logger.info("Closing the browser");
+        System.out.println("Tear down method called");
     }
+
 }

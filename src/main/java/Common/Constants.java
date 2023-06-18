@@ -3,7 +3,7 @@ package Common;
 public class Constants {
 
     /** Базовый URL ЛКК*/
-    private static final String BASE_URL = "http://profile.ivanov.polygon.dev-napopravku.ru/clinic";
+    private static final String BASE_URL = "http://profile.ivanov.polygon.dev-napopravku.ru";
 
     /** Данные для авторизации*/
     private static final String LOGIN = "i.ivanov.napopravku@gmail.com";
