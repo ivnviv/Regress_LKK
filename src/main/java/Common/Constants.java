@@ -6,8 +6,8 @@ public class Constants {
     public final static String BASE_URL = "http://profile.ivanov.polygon.dev-napopravku.ru/clinic";
 
     /** Данные для авторизации*/
-    public final static String LOGIN = "i.ivanov.napopravku@gmail.com";
-    public final static String PASSWORD = "Xkxzqu2FGi5Hrmt";
+    public final static String LOGIN = "";
+    public final static String PASSWORD = "";
 
     /** Данные на добавление клиники*/
     public final static String CLINIC_NAME = "Тестовая000";
